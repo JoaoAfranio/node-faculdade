@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-black">
+      <a class="navbar-brand" href="#">Empresas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Listar <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/new">Cadastrar</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+      </div>
+    </nav>
+
+    
+    <main role="main">
+        <div class="jumbotron">
+          <div class="col-sm-8 mx-auto">
+            <h1><%= title %></h1>
+              <% docs.forEach(function(dados){ %>
+                <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title"><%= dados.nome  %></h5>
+                      <p class="card-text">Endereço: <%= dados.endereco %></p>
+                      <p class="card-text">Número: <%= dados.numero %></p>
+                      <p class="card-text">Bairro: <%= dados.bairro %></p>
+                      <p class="card-text">Cidade: <%= dados.cidade %></p>
+                    <!-- <a href="#" class="btn btn-primary">Deletar</a> --> 
+                  </div>
+                </div>
+
+              <%})%>
+
+          </div>
+        </div>
+    </main>
+    <script src="public/javascripts/jquery-3.js"></script>
+    <script src="public/javascripts/popper.js"></script>
+    <script src="public/javascripts/bootstrap.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-black">
+      <a class="navbar-brand" href="#">Empresas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Listar <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/new">Cadastrar</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+      </div>
+    </nav>
+
+    
+    <main role="main">
+        <div class="jumbotron">
+          <div class="col-sm-8 mx-auto">
+            <h1><%= title %></h1>
+          <form action="/new" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                  <label>Nome Empresa:</label>
+                  <input placeholder="Empresa" class="form-control" type="text" name="nome"/>
+                </div>
+                <div class="col-md-6">
+                    <label>Endereço</label>
+                    <input placeholder="Rua A" class="form-control" type="text" name="endereco" />
+                  </div>
+                <div class="col-md-6">
+                  <label>Número</label>
+                  <input placeholder="25" class="form-control" type="number" name="numero" />
+                </div>
+                <div class="col-md-6">
+                    <label>Bairro</label>
+                    <input placeholder="Centro" class="form-control" type="text" name="bairro" />
+                </div>
+                <div class="col-md-6">
+                    <label>Cidade</label>
+                    <input placeholder="Patos de Minas" class="form-control" type="text" name="cidade" />
+                </div>
+              </div>
+              <input style="margin-top: 15px;background-color: #000;border-color: #000;" class="btn btn-primary btn-lg btn-block" type="submit" value="Salvar" />
+          </form>
+
+  </body>
+</html>
